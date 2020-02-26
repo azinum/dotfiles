@@ -28,4 +28,10 @@ if [ -f ~/.config/aliasrc ]; then
 	source ~/.config/aliasrc
 fi
 
+# Set wallpaper
+local wallpaper_path='~/Pictures/Desktop Wallpapers/Etc/cool.jpg'
+if [ -f ${wallpaper_path} ]; then
+	feh --bg-fill ${wallpaper_path}
+fi
+
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
