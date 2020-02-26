@@ -10,7 +10,7 @@ xinput --set-prop "pointer:Razer Razer DeathAdder Chroma" "libinput Accel Speed"
 xset r rate 220 40
 
 local user="${USER}@$(hostname)"
-while true; do
+while true ; do
 	xsetroot -name "${user} /// $(date)"
 	sleep 1
 done &
@@ -19,7 +19,6 @@ done &
 local wallpaper_path=~/Pictures/Wallpapers/Etc
 local wallpaper_change=1
 local wallpaper_change_interval=120     # Interval in seconds
-if [[ -d ${wallpaper_path} && ${wallpaper_change} == 1 ]]; then
-        watch -n ${wallpaper_change_interval} feh --randomize --bg-fill "${wallpaper_path}/*" &> /dev/null &!
+if [[ -d ${wallpaper_path} ]] && [[ ${wallpaper_change} == 1 ]] ; then
+	watch -n ${wallpaper_change_interval} feh --randomize --bg-fill "${wallpaper_path}/*" &> /dev/null &!
 fi
-
