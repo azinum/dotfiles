@@ -1,0 +1,16 @@
+# .xprofile
+
+# Enable transparent windows
+xcompmgr &
+
+# Ignore error if mouse device wasn't found
+xinput --set-prop "pointer:Razer Razer DeathAdder Chroma" "libinput Accel Speed" -.7 > /dev/null
+
+# Set key repeat speed
+xset r rate 220 40
+
+local user="${USER}@$(hostname)"
+while true; do
+	xsetroot -name "${user} /// $(date)"
+	sleep 1
+done &
