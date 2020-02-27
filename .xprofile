@@ -17,8 +17,11 @@ done &
 
 # Wallpaper configuration (feh is required)
 local wallpaper_path=~/Pictures/Wallpapers/Etc
-local wallpaper_change=1
+local wallpaper_change=0
 local wallpaper_change_interval=120     # Interval in seconds
 if [[ -d ${wallpaper_path} ]] && [[ ${wallpaper_change} == 1 ]] ; then
 	watch -n ${wallpaper_change_interval} feh --randomize --bg-fill "${wallpaper_path}/*" &> /dev/null &!
 fi
+
+sxhkd &
+
