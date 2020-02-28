@@ -3,20 +3,11 @@
 # Enable transparent windows
 xcompmgr &
 
-# Ignore error if mouse device wasn't found
-xinput --set-prop "pointer:Razer Razer DeathAdder Chroma" "libinput Accel Speed" -.7 > /dev/null
-
 # Set key repeat speed
 xset r rate 220 40
 
 # Status bar configuration
-if [ -f ~/dotfiles/.bar ]; then
-	while true; do	
-		local bar=$(. ~/dotfiles/.bar | sed ':a;N;$!ba;s/\n/,/g')
-		xsetroot -name "${bar}"
-		sleep 1
-	done &
-fi
+dwmbar > /dev/null &
 
 # Wallpaper configuration (feh is required)
 local wallpaper_path=~/Pictures/Wallpapers/Etc
