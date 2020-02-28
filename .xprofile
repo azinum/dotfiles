@@ -6,6 +6,9 @@ xcompmgr &
 # Set key repeat speed
 xset r rate 220 40
 
+# Set razer profile
+razercfg -p 2 > /dev/null
+
 # Status bar configuration
 dwmbar > /dev/null &
 

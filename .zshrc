@@ -20,10 +20,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-if [ -f ~/.config/.xsessionrc ]; then
-	source ~/.config/.xsessionrc
-fi
-
 if [ -f ~/.config/aliasrc ]; then
 	source ~/.config/aliasrc
 fi
