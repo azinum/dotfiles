@@ -9,11 +9,14 @@ xinput --set-prop "pointer:Razer Razer DeathAdder Chroma" "libinput Accel Speed"
 # Set key repeat speed
 xset r rate 220 40
 
-local user="${USER}@$(hostname)"
-while true ; do
-	xsetroot -name "${user} /// $(date)"
-	sleep 1
-done &
+# Status bar configuration
+if [ -f ~/dotfiles/.bar ]; then
+	while true; do	
+		local bar=$(. ~/dotfiles/.bar | sed ':a;N;$!ba;s/\n/,/g')
+		xsetroot -name "${bar}"
+		sleep 1
+	done &
+fi
 
 # Wallpaper configuration (feh is required)
 local wallpaper_path=~/Pictures/Wallpapers/Etc
@@ -23,5 +26,5 @@ if [[ -d ${wallpaper_path} ]] && [[ ${wallpaper_change} == 1 ]] ; then
 	watch -n ${wallpaper_change_interval} feh --randomize --bg-fill "${wallpaper_path}/*" &> /dev/null &!
 fi
 
+# Keybindings
 sxhkd &
-
