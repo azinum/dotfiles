@@ -7,7 +7,7 @@ xcompmgr &
 xset r rate 220 40
 
 # Set razer profile
-razercfg -p 2 > /dev/null
+razercfg -r 1:1 > /dev/null
 
 # Status bar configuration
 dwmbar > /dev/null &

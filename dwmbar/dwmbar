@@ -12,6 +12,6 @@ bar_status() {
 
 
 while :; do
-	xsetroot -name "$(bar_status | tr '\n' ' ')"	
+	xsetroot -name "$(bar_status | tr '\n' ' ')"
 	sleep 1
 done
