@@ -7,18 +7,10 @@ xcompmgr &
 xset r rate 220 40
 
 # Set razer profile
-razercfg -r 1:1 > /dev/null
+razercfg -r 0:1 > /dev/null
 
 # Status bar configuration
 dwmbar > /dev/null &
-
-# Wallpaper configuration (feh is required)
-local wallpaper_path=~/Pictures/Wallpapers/Etc
-local wallpaper_change=0
-local wallpaper_change_interval=120     # Interval in seconds
-if [[ -d ${wallpaper_path} ]] && [[ ${wallpaper_change} == 1 ]] ; then
-	watch -n ${wallpaper_change_interval} feh --randomize --bg-fill "${wallpaper_path}/*" &> /dev/null &!
-fi
 
 # Keybindings
 sxhkd &

@@ -1,12 +1,19 @@
-#!/bin/sh
+#!/bin/zsh
 
-
-user_info="${USER}@$(hostname)"
 delim="|"
 
 bar_status() {
+	echo "$delim"
+
+	ps axch -o cmd:15,%mem --sort=-%mem | head -1 | tr -s ' ' && echo "% $delim"
+
+	free -h | awk '/^Mem:/ {print $3 "/" $2}' && echo "💾 $delim"
+
+	mullvad relay get | grep -Po '(?<=hostname\s)[^\s]*'
+	mullvad status | grep -q 'Connected' && echo "$fg[green]🔒${reset_color} $delim"
+
 	sed "s/down//;s/up/🌎/" /sys/class/net/e*/operstate && echo "$delim"
-	printf "${user_info} $delim "
+
 	date '+%a %d %b %Y %H:%M:%S'
 }
 
