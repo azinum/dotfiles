@@ -9,14 +9,14 @@ bar_status() {
 
 	free -h | awk '/^Mem:/ {print $3 "/" $2}' && echo "💾 $delim"
 
-	mullvad relay get | grep -Po '(?<=hostname\s)[^\s]*'
-	mullvad status | grep -q 'Connected' && echo "$fg[green]🔒${reset_color} $delim"
+	mullvad status | grep -q 'Connected' && mullvad relay get | grep -Po '(?<=hostname\s)[^\s]*' && echo "🔒 $delim"
 
-	sed "s/down//;s/up/🌎/" /sys/class/net/e*/operstate && echo "$delim"
+	mullvad status | grep -q 'Connecting' && echo "Connecting... ⏳ $delim"
+
+	sed "s/down/🌎❌/;s/up/🌎/" /sys/class/net/e*/operstate && echo "$delim"
 
 	date '+%a %d %b %Y %H:%M:%S'
 }
-
 
 while :; do
 	xsetroot -name "$(bar_status | tr '\n' ' ')"
