@@ -10,7 +10,7 @@ fi
 
 # Some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
+alias la='ls -lAh'
 alias l='ls -CF'
 
 # Provide some protection when using rm

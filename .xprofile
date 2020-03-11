@@ -6,6 +6,9 @@ xcompmgr &
 # Set key repeat speed
 xset r rate 220 40
 
+# Set background wallpaper
+# feh --bg-fill Pictures/Wallpapers/Landscapes/1426033016725.jpg
+
 # Set razer profile
 razercfg -r 0:1 > /dev/null
 
