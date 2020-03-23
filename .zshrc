@@ -24,4 +24,6 @@ if [ -f ~/.config/aliasrc ]; then
 	source ~/.config/aliasrc
 fi
 
+# feh --bg-fill ~/Pictures/Wallpapers/Landscapes/aurora_from_ground.jpg
+
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null

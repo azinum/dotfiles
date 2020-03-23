@@ -1,19 +1,23 @@
 # .xprofile
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Enable transparent windows
-xcompmgr &
+xcompmgr 2> /dev/null &
+
+# Set desktop wallpaper
+# feh --bg-fill "$HOME/Pictures/Wallpapers/Landscapes/aurora_from_ground.jpg"
 
 # Set key repeat speed
 xset r rate 220 40
-
-# Set background wallpaper
-# feh --bg-fill Pictures/Wallpapers/Landscapes/1426033016725.jpg
 
 # Set razer profile
 razercfg -r 0:1 > /dev/null
 
 # Status bar configuration
-dwmbar > /dev/null &
+killall dwmbar 2> /dev/null
+dwmbar &
 
 # Keybindings
+killall sxhkd 2> /dev/null
 sxhkd &
