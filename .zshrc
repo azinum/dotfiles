@@ -2,7 +2,7 @@
 
 # Set up the prompt
 autoload -U colors && colors
-PS1="%{$fg[red]%}(%{$fg[cyan]%}%n%{$fg[cyan]%}@%{$fg[cyan]%}%M %{$fg[cyan]%}%~/%{$fg[red]%})%{$reset_color%}$ "
+PS1="%{$fg[red]%}[%{$fg[cyan]%}%n%{$fg[cyan]%}@%{$fg[cyan]%}%M %{$fg[cyan]%}%~/%{$fg[red]%}]%{$reset_color%}$ "
 
 HISTSIZE=5000
 SAVEHIST=5000
@@ -19,5 +19,7 @@ compinit
 _comp_options+=(globdots)
 
 [ -f ~/.config/aliasrc ] && source ~/.config/aliasrc
+
+[ -f ~/.Xresources ] && xrdb ~/.Xresources
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null

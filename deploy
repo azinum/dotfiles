@@ -5,6 +5,7 @@ CONFIG_DIR=~/.config
 
 [ ! -f ~/.zshrc ] && ln .zshrc ~/.zshrc
 [ ! -f ~/.xprofile ] && ln .xprofile ~/.xprofile
+[ ! -f ~/.Xresources ] && cp -p .Xresources .Xdefaults && ln .Xresources ~/.Xresources
 
 mkdir -p ${BIN_DIR}/
 ln -f .local/bin/* ${BIN_DIR}/

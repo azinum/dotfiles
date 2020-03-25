@@ -6,10 +6,10 @@ export PATH="$HOME/.local/bin:$PATH"
 xcompmgr 2> /dev/null &
 
 # Set desktop wallpaper
-feh --bg-fill Pictures/Wallpapers/Landscapes/1426033016725.jpg
+feh --bg-fill ~/Pictures/Wallpapers/Landscapes/1426033016725.jpg 2> /dev/null
 
 # Set key repeat speed
-xset r rate 220 40
+xset r rate 220 50
 
 # Set razer profile
 razercfg -r 0:1 > /dev/null
