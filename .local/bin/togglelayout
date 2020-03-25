@@ -11,4 +11,4 @@ else
 	setxkbmap $LAYOUT1
 fi
 
-[ $NOTIFY_SEND != 0 ] && notify-send -t 100 "$(setxkbmap -query | grep layout)"
+[ $NOTIFY_SEND != 0 ] && notify-send -t 80 "💻 layout: $(setxkbmap -query | grep layout | awk '{ print $2 }')"
