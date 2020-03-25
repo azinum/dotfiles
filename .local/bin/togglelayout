@@ -1,0 +1,14 @@
+#!/bin/bash
+
+NOTIFY_SEND=1
+LAYOUT1=us
+LAYOUT2=se
+
+# Can this be done in one line?
+if [[ $(setxkbmap -query | grep layout | grep $LAYOUT1) ]]; then
+	setxkbmap $LAYOUT2
+else
+	setxkbmap $LAYOUT1
+fi
+
+[ $NOTIFY_SEND != 0 ] && notify-send -t 100 "$(setxkbmap -query | grep layout)"

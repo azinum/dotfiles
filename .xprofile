@@ -6,7 +6,7 @@ export PATH="$HOME/.local/bin:$PATH"
 xcompmgr 2> /dev/null &
 
 # Set desktop wallpaper
-# feh --bg-fill "$HOME/Pictures/Wallpapers/Landscapes/aurora_from_ground.jpg"
+feh --bg-fill Pictures/Wallpapers/Landscapes/1426033016725.jpg
 
 # Set key repeat speed
 xset r rate 220 40
