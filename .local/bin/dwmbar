@@ -5,6 +5,8 @@ delim="|"
 bar_status() {
 	echo "$delim"
 
+	keylayout && echo "$delim"
+
 	ps axch -o cmd:15,%mem --sort=-%mem | head -1 | tr -s ' ' && echo "% $delim"
 
 	free -h | awk '/^Mem:/ {print $3 "/" $2}' && echo "💾 $delim"
