@@ -6,13 +6,16 @@ export PATH="$HOME/.local/bin:$PATH"
 xcompmgr 2> /dev/null &
 
 # Set desktop wallpaper
-feh --bg-fill ~/Pictures/Wallpapers/Landscapes/1426033016725.jpg 2> /dev/null
+feh --bg-fill ~/Pictures/wall.png 2> /dev/null
 
 # Set key repeat speed
 xset r rate 220 50
 
+# Set the mouse pointer speed
+xset m 1 0
+
 # Set razer profile
-razercfg -r 0:1 > /dev/null
+razercfg -r 0:1 2> /dev/null
 
 # Status bar configuration
 killall dwmbar 2> /dev/null
@@ -21,3 +24,6 @@ dwmbar &
 # Keybindings
 killall sxhkd 2> /dev/null
 sxhkd &
+
+# Screen resolution
+xrandr --size 1440x900
