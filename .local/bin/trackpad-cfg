@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DEVICE_NAME="bcm5974"
+
+DEVICE_ID=$(xinput list --id-only "${DEVICE_NAME}" 2> /dev/null)
+[ ! "${DEVICE_ID}" ] && exit
+
+xinput set-prop ${DEVICE_ID} 'Device Accel Constant Deceleration' 3
+xinput set-prop ${DEVICE_ID} 'Synaptics Scrolling Distance' -650, -650
+xinput set-prop ${DEVICE_ID} 'Synaptics Move Speed' 2, 2, 0.0157, 0

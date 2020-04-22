@@ -5,6 +5,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # Enable transparent windows
 xcompmgr 2> /dev/null &
 
+# Screen resolution
+xrandr --size 1440x900
+
 # Set desktop wallpaper
 feh --bg-fill ~/Pictures/wall.png 2> /dev/null
 
@@ -17,6 +20,9 @@ xset m 1 0
 # Set razer profile
 razercfg -r 0:1 2> /dev/null
 
+# In case we are using a trackpad
+trackpad-cfg 2> /dev/null
+
 # Status bar configuration
 killall dwmbar 2> /dev/null
 dwmbar &
@@ -24,6 +30,3 @@ dwmbar &
 # Keybindings
 killall sxhkd 2> /dev/null
 sxhkd &
-
-# Screen resolution
-xrandr --size 1440x900
