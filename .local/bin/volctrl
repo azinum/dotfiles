@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[ "$#" -le 0 ] && exit
+
+NUM="${2:-5}"
+
+case "$1" in
+	toggle) pulsemixer --toggle-mute ;;
+	up) pulsemixer --change-volume +"$NUM" ;;
+	down) pulsemixer --change-volume -"$NUM" ;;
+esac >/dev/null
+
+notify-send -t 1  "$(volume)"

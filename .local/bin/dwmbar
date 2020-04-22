@@ -7,15 +7,15 @@ bar_status() {
 
 	keylayout && echo "$delim"
 
-	ps axch -o cmd:15,%mem --sort=-%mem | head -1 | tr -s ' ' && echo "% $delim"
-
 	free -h | awk '/^Mem:/ {print $3 "/" $2}' && echo "💾 $delim"
 
-	mullvad status | grep -q 'Connected'  && echo "🔒 $delim"
+	ps axch -o cmd:15,%mem --sort=-%mem | head -1 | tr -s ' ' && echo "% $delim"
 
-	mullvad status | grep -q 'Connecting' && echo "Connecting... ⏳ $delim"
+	mullvad status 2>/dev/null | grep -q 'Connected'  && echo "🔒 $delim"
 
-  sed "s/down/🌎❌/;s/up/🌎/" /sys/class/net/e*/operstate 2>/dev/null && echo "$delim"
+	mullvad status 2>/dev/null | grep -q 'Connecting' && echo "Connecting... ⏳ $delim"
+
+	sed "s/down/🌎❌/;s/up/🌎/" /sys/class/net/e*/operstate 2>/dev/null && echo "$delim"
 
 	sed "s/Full/✔️/; s/Discharging/🔋/; s/Charging/🔌/;" /sys/class/power_supply/BAT0/status 2> /dev/null && cat /sys/class/power_supply/BAT0/capacity && echo "%" && echo "$delim"
 

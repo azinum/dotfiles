@@ -1,0 +1,12 @@
+#!/bin/bash
+
+status="$(pactl list sinks)"
+
+vol="$(echo "$status" | grep '[0-9]\+%' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
+
+icon="🔉"
+
+[ "$vol" -gt 70 ] && icon="🔊"
+[ "$vol" -lt 30 ] && icon="🔈"
+
+printf "${icon}${vol}%%"

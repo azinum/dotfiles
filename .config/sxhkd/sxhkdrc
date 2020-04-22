@@ -1,3 +1,9 @@
 
 super + space
 	togglelayout
+F12
+	volctrl up 5
+F11
+	volctrl down 5
+F10
+	volctrl toggle
