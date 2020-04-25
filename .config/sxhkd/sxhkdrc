@@ -1,6 +1,10 @@
 
 super + space
 	togglelayout
+F1
+	backlight down
+F2
+	backlight up
 F12
 	volctrl up 5
 F11

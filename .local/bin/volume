@@ -9,4 +9,4 @@ icon="🔉"
 [ "$vol" -gt 70 ] && icon="🔊"
 [ "$vol" -lt 30 ] && icon="🔈"
 
-printf "${icon}${vol}%%"
+printf "${icon} ${vol}%%"

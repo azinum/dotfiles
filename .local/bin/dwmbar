@@ -17,6 +17,8 @@ bar_status() {
 
 	sed "s/down/🌎❌/;s/up/🌎/" /sys/class/net/e*/operstate 2>/dev/null && echo "$delim"
 
+	volume 2>/dev/null && echo " $delim"
+
 	sed "s/Full/✔️/; s/Discharging/🔋/; s/Charging/🔌/;" /sys/class/power_supply/BAT0/status 2> /dev/null && cat /sys/class/power_supply/BAT0/capacity && echo "%" && echo "$delim"
 
 	date '+%a %d %b %Y %H:%M:%S'

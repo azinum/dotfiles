@@ -21,7 +21,7 @@ xset m 1 0
 razercfg -r 0:1 2> /dev/null
 
 # In case we are using a trackpad
-trackpad-cfg 2> /dev/null
+# trackpad-cfg 2> /dev/null
 
 # Status bar configuration
 killall dwmbar 2> /dev/null

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ "$#" -le 0 ] && exit
+
+value="$1"
+
+case "$1" in
+	up) xbacklight -time 0 -inc 1 ;;
+	down) xbacklight -time 0 -dec 1 ;;
+	*) xbacklight -time 0 -set "${value}" ;;
+esac >/dev/null
+

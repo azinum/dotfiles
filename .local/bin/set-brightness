@@ -1,5 +1,0 @@
-#!/bin/bash
-
-OUT_DISPLAY=$(xrandr -q | grep 'connected' | head -n 1 | cut -d ' ' -f1)
-[ "$#" -ge 1 ] && BRIGHTNESS=$1 || BRIGHTNESS=1
-xrandr --output ${OUT_DISPLAY} --brightness ${BRIGHTNESS}
