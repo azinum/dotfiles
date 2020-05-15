@@ -5,4 +5,4 @@ autocmd BufRead,BufNewFile *.c,*.h setlocal tabstop=2 softtabstop=0 shiftwidth=2
 nnoremap <F5> :make!<cr>
 :set tabstop=4 shiftwidth=4 smarttab autoindent
 :set smartindent
-
+:set showcmd

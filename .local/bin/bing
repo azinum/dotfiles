@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FILE_NAME=bell
+
+[ "$#" -ge 1 ] && FILE_NAME="$1"
+
+BING_FILE=~/.config/${FILE_NAME}.oga
+
+[ -f ${BING_FILE} ] && paplay "${BING_FILE}" 2>/dev/null &
+
+

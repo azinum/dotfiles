@@ -6,8 +6,10 @@ F1
 F2
 	backlight up
 F12
-	volctrl up 5
+	volctrl up 5; \
+	bing bell
 F11
-	volctrl down 5
+	volctrl down 5; \
+	bing bell
 F10
 	volctrl toggle
