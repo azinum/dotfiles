@@ -1,15 +1,18 @@
 
 super + space
 	togglelayout
-F1
+super + F1
 	backlight down
-F2
+super + F2
 	backlight up
-F12
+super + F12
 	volctrl up 5; \
 	bing bell
-F11
+super + F11
 	volctrl down 5; \
 	bing bell
-F10
+super + F10
 	volctrl toggle
+super + F4
+	mkdir -p ~/Pictures/Screenshots; \
+	scrot -e 'mv $f ~/Pictures/Screenshots/'
