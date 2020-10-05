@@ -10,7 +10,7 @@ xcompmgr 2> /dev/null &
 xrandr --size 1920x1080
 
 # Set desktop wallpaper
-feh --bg-fill ~/Pictures/wall.png 2> /dev/null &
+feh --bg-fill ~/Pictures/wall.jpg 2> /dev/null &
 
 # Set key repeat speed
 xset r rate 220 50
