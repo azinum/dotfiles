@@ -1,6 +1,9 @@
 # .xprofile
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/Documents/Applications:$PATH"
+
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Enable transparent windows
 xcompmgr 2> /dev/null &
@@ -10,7 +13,7 @@ xcompmgr 2> /dev/null &
 xrandr --size 1920x1080
 
 # Set desktop wallpaper
-feh --bg-fill ~/Pictures/wall.jpg 2> /dev/null &
+feh --bg-fill ~/Pictures/wall.* 2> /dev/null &
 
 # Set key repeat speed
 xset r rate 220 50
