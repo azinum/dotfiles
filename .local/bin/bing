@@ -6,6 +6,6 @@ FILE_NAME=bell
 
 BING_FILE=~/.config/${FILE_NAME}.oga
 
-[ -f ${BING_FILE} ] && paplay "${BING_FILE}" 2>/dev/null &
+[ -f ${BING_FILE} ] && paplay --volume=32768 "${BING_FILE}" 2>/dev/null &
 
 

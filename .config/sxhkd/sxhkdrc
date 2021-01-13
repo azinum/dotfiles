@@ -1,18 +1,28 @@
 
 super + space
-	togglelayout
+	togglelayout; \
+	kill -36 $(pidof dwmblocks);
+
 super + F1
 	backlight down
+
 super + F2
 	backlight up
+
 super + F12
-	volctrl up 5; \
-	bing bell
+	stat-volctrl up 5; \
+	kill -35 $(pidof dwmblocks); \
+	bing bell;
+
 super + F11
-	volctrl down 5; \
-	bing bell
+	stat-volctrl down 5; \
+	kill -35 $(pidof dwmblocks); \
+	bing bell;
+
 super + F10
-	volctrl toggle
+	stat-volctrl toggle; \
+	kill -35 $(pidof dwmblocks);
+
 super + F4
 	mkdir -p ~/Pictures/Screenshots; \
 	scrot -e 'mv $f ~/Pictures/Screenshots/'

@@ -28,8 +28,10 @@ razercfg -r 0:1 2> /dev/null
 # trackpad-cfg 2> /dev/null
 
 # Status bar configuration
-killall dwmbar 2> /dev/null
-dwmbar &
+killall dwmblocks 2> /dev/null
+dwmblocks &
+# killall dwmbar 2> /dev/null
+# dwmbar &
 
 # Keybindings
 killall sxhkd 2> /dev/null
