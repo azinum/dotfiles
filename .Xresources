@@ -5,6 +5,8 @@
 
 *.font: monospace:pixelsize=14:antialiasing=true:autohint=true
 
+*.borderpx: 3
+
 !! black
 *.color0:       #101010
 *.color8:       #434758

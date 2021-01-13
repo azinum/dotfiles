@@ -6,7 +6,7 @@ CONFIG_DIR=~/.config
 [ ! -f ~/.zshrc ] && ln .zshrc ~/.zshrc
 [ ! -f ~/.xprofile ] && ln .xprofile ~/.xprofile
 [ ! -f ~/.vimrc ] && ln .vimrc ~/.vimrc
-[ ! -f ~/.Xresources ] && cp -p .Xresources .Xdefaults && ln .Xresources ~/.Xresources
+[ ! -f ~/.Xresources ] && cp -p .Xresources .Xdefaults && ln .Xresources ~/.Xresources && xrdb ~/.Xresources
 
 mkdir -p ${BIN_DIR}/
 ln -f .local/bin/* ${BIN_DIR}/
