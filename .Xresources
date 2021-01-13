@@ -1,7 +1,7 @@
 !! .Xresources -- apply settings via xrdb .Xresources
 
 !! Transparency (0-255):
-*.alpha: 200
+*.alpha: 225
 
 *.font: monospace:pixelsize=14:antialiasing=true:autohint=true
 
