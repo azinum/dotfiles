@@ -2,11 +2,18 @@
 
 BIN_DIR=~/.local/bin
 CONFIG_DIR=~/.config
+VIM_SYNTAX_DIR=~/.vim/after/syntax
+NVIM_SYNTAX_DIR=~/.config/nvim/after/syntax
 
 [ ! -f ~/.zshrc ] && ln .zshrc ~/.zshrc
 [ ! -f ~/.xprofile ] && ln .xprofile ~/.xprofile
 [ ! -f ~/.vimrc ] && ln .vimrc ~/.vimrc && ln .vimrc ~/.config/nvim/init.vim
 [ ! -f ~/.Xresources ] && cp -p .Xresources .Xdefaults && ln .Xresources ~/.Xresources && xrdb ~/.Xresources
+
+mkdir -p ${VIM_SYNTAX_DIR}
+mkdir -p ${NVIM_SYNTAX_DIR}
+ln *.vim ${VIM_SYNTAX_DIR}/ 2> /dev/null
+ln *.vim ${NVIM_SYNTAX_DIR}/ 2> /dev/null
 
 mkdir -p ${BIN_DIR}/
 ln -f .local/bin/* ${BIN_DIR}/
