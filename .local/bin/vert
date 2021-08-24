@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Using ffmpeg to convert a list of audio files from one format to the other,
+# and then (optionally) using sox to convert that audio file to a certain sample rate.
+
+ext_from=mp3
+ext_to=wav
+lowercase=1
+trim_brackets=1
+new_sample_rate=30000
+remove_converted=1
+
+[ $1 ] && ext_from=$1 || 2> /dev/null
+[ $2 ] && ext_to=$2 || 2> /dev/null
+
+for f in *.${ext_from}; do
+	new_file="${f%.${ext_from}}.${ext_to}"
+	[ ${lowercase} -eq 1 ] && new_file="${new_file,,}" && new_file="${new_file// /_}"
+	[ ${trim_brackets} -eq 1 ] && new_file="${new_file//(/}" && new_file="${new_file//)/}"
+	echo "Converting $f -> $new_file"
+	ffmpeg -i "$f" "$new_file"
+	[ ${new_sample_rate} -gt 0 ] && sox -r "${new_sample_rate}" "${new_file}" "slow_${new_file}"
+	[ ${remove_converted} -eq 1 ] && rm -f ${new_file}
+done

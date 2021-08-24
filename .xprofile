@@ -37,3 +37,7 @@ dwmblocks &
 # Keybindings
 killall sxhkd 2> /dev/null
 sxhkd &
+
+# start_jack &
+
+xscreensaver &
