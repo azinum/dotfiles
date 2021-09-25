@@ -1,0 +1,12 @@
+#!/bin/bash -f
+
+target_files=
+command_string=
+
+[ $1 ] && target_files="$1" || 2> /dev/null
+[ $2 ] && command_string="$2" || 2> /dev/null
+
+for file in $target_files ; do
+	echo ${file}
+#	exec ${command_string}
+done

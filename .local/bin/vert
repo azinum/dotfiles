@@ -7,7 +7,7 @@ ext_from=mp3
 ext_to=wav
 lowercase=1
 trim_brackets=1
-new_sample_rate=30000
+new_sample_rate=34000
 remove_converted=1
 
 [ $1 ] && ext_from=$1 || 2> /dev/null

@@ -1,14 +1,21 @@
 #!/bin/bash
 
 NOTIFY_SEND=1
-LAYOUT1=us
-LAYOUT2=se
 
-# Can this be done in one line?
-if [[ $(setxkbmap -query | grep layout | grep $LAYOUT1) ]]; then
-	setxkbmap $LAYOUT2
-else
-	setxkbmap $LAYOUT1
-fi
+declare -A layout_map=(
+	[us]=0
+	[se]=1
+	[ru]=2
+)
+
+layouts=(us se ru)
+
+map=$(setxkbmap -query | grep layout | grep -o '.\{2\}$')
+
+value=${layout_map[$map]}
+
+next=$(( (1 + $value) % ${#layout_map[@]} ))
+
+setxkbmap ${layouts[$next]}
 
 [ $NOTIFY_SEND != 0 ] && notify-send -t 80 "$(keylayout)"
