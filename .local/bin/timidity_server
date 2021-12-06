@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# -Os - output to ALSA
+# -iA - ALSA sequencer client
+timidity -iA -B8,2 -Os

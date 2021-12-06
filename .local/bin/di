@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Lookup word from dictionary, convert the result to pdf, and then view it.
+# Does nothing if the word does not exist.
+[[ $# -gt 0 ]] && dict "$1" | enscript --output=- | ps2pdf - | zathura - 2>/dev/null

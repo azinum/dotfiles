@@ -19,3 +19,5 @@ autocmd BufNewFile,BufRead *.vert,*.frag, set syntax=c
 autocmd BufRead,BufNewFile *.c,*.h,*.si,*.funk setlocal tabstop=2 softtabstop=0 shiftwidth=2 expandtab smarttab autoindent
 " autocmd BufRead,BufNewFile *.c,*.h,*.si,*.funk setlocal tabstop=4 softtabstop=0 shiftwidth=4 expandtab smarttab autoindent
 autocmd BufRead,BufNewFile *.fs setlocal tabstop=4 softtabstop=1 shiftwidth=4 expandtab smarttab autoindent
+
+nnoremap <F3> :set autoindent noexpandtab tabstop=4 shiftwidth=4<cr>

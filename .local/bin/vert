@@ -7,8 +7,8 @@ ext_from=mp3
 ext_to=wav
 lowercase=1
 trim_brackets=1
-new_sample_rate=34000
-remove_converted=1
+new_sample_rate=44100
+remove_converted=0
 
 [ $1 ] && ext_from=$1 || 2> /dev/null
 [ $2 ] && ext_to=$2 || 2> /dev/null
@@ -19,6 +19,10 @@ for f in *.${ext_from}; do
 	[ ${trim_brackets} -eq 1 ] && new_file="${new_file//(/}" && new_file="${new_file//)/}"
 	echo "Converting $f -> $new_file"
 	ffmpeg -i "$f" "$new_file"
+
 	[ ${new_sample_rate} -gt 0 ] && sox -r "${new_sample_rate}" "${new_file}" "slow_${new_file}"
+
+#	[ ${new_sample_rate} -gt 0 ] && sox "${new_file}" "pitch_${new_file}" pitch 300
+
 	[ ${remove_converted} -eq 1 ] && rm -f ${new_file}
 done
