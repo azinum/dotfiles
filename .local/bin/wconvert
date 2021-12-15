@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Script for weight conversions between lbs and kg
+
+LBS=0.45359237
+OUT=""
+
+case $1 in
+	kg) [[ $# -gt 1 ]] && OUT=$(awk "BEGIN {print ${LBS} * $2}") && OUT="$2 lbs = ${OUT} kg" || exit 1 ;;
+	lbs) [[ $# -gt 1 ]] && OUT=$(awk "BEGIN {print $2 / ${LBS}}") && OUT="$2 kg = ${OUT} lbs" || exit 1 ;;
+	*) [[ $# -gt 0 ]] && OUT=$(awk "BEGIN {print ${LBS} * $1}") && OUT="$1 lbs = ${OUT} kg" || exit 1 ;;
+esac
+
+notify-send -t 3000 "${OUT}" 2>/dev/null
