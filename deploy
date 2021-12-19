@@ -12,8 +12,8 @@ NVIM_SYNTAX_DIR=~/.config/nvim/after/syntax
 
 mkdir -p ${VIM_SYNTAX_DIR}
 mkdir -p ${NVIM_SYNTAX_DIR}
-ln *.vim ${VIM_SYNTAX_DIR}/ 2> /dev/null
-ln *.vim ${NVIM_SYNTAX_DIR}/ 2> /dev/null
+ln -f *.vim ${VIM_SYNTAX_DIR}/ 2> /dev/null
+ln -f *.vim ${NVIM_SYNTAX_DIR}/ 2> /dev/null
 
 mkdir -p ${BIN_DIR}/
 ln -f .local/bin/* ${BIN_DIR}/
