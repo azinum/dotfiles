@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BREAK=5
+WORK=20
+REST=6
+
+for (( i = 0; i < ${REST}; i++ )); do
+	notify-send "Work 🏋️ ${WORK} minute(s)" && sleep ${WORK}m
+	notify-send "Break ☕ ${BREAK} minute(s)" && sleep ${BREAK}m
+done
+
+notify-send "Work complete ($(expr ${REST} \* ${WORK} ) minutes), well done! 🌅"
