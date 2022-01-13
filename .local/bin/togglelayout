@@ -5,10 +5,11 @@ NOTIFY_SEND=1
 declare -A layout_map=(
 	[us]=0
 	[se]=1
-	[ru]=2
+#	[ru]=2
 )
 
-layouts=(us se ru)
+layouts=(us se)
+# layouts=(us se ru)
 
 map=$(setxkbmap -query | grep layout | grep -o '.\{2\}$')
 

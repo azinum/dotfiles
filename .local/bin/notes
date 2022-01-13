@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# quick script to open directory with notes with vim
+
+CONF=~/.notes
+
+case $1 in
+	reset) rm -f ${CONF} && printf "reset note configuration file '${CONF}'\n" && exit 0 ;;
+esac 2>/dev/null
+
+if [ ! -f ${CONF} ] ; then
+	printf "set note path: " && \
+	read NOTE_PATH && \
+	printf "${EDITOR}\n${NOTE_PATH}\n" > ${CONF} && \
+	mkdir -p "${NOTE_PATH}" && \
+	printf "note path set to '${NOTE_PATH}' and saved to configuration file '${CONF}'\n" && \
+	exit 0
+fi
+
+${EDITOR}  "`head -2 ${CONF} | tail -1 ${CONF}`"
