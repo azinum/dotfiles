@@ -18,7 +18,7 @@ autocmd BufNewFile,BufRead *.funk set syntax=rust
 autocmd BufNewFile,BufRead *.kt set syntax=java
 autocmd BufNewFile,BufRead *.fs set syntax=rust
 autocmd BufNewFile,BufRead *.vert,*.frag,*.lang set syntax=c
-autocmd BufRead,BufNewFile *.cpp,*.c,*.hpp,*.h,*.si,*.funk,*.lang,*.porth,*.spl setlocal tabstop=2 softtabstop=0 shiftwidth=2 expandtab smarttab autoindent
+autocmd BufRead,BufNewFile *.cpp,*.c,*.hpp,*.h,*.si,*.funk,*.lang,*.porth,*.spl,*.nim setlocal tabstop=2 softtabstop=0 shiftwidth=2 expandtab smarttab autoindent
 autocmd BufRead,BufNewFile *.fs setlocal tabstop=4 softtabstop=1 shiftwidth=4 expandtab smarttab autoindent
 autocmd BufRead,BufNewFile *.py setlocal tabstop=4 softtabstop=1 shiftwidth=4 expandtab smarttab autoindent
 autocmd BufRead,BufNewFile *.hs setlocal tabstop=4 softtabstop=1 shiftwidth=4 expandtab smarttab autoindent
