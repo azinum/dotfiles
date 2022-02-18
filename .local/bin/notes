@@ -2,6 +2,15 @@
 
 # quick script to open directory with notes with vim
 
+# abort on error
+set -e
+
+# remove glob if glob expansion not found
+# shopt -s nullglob
+
+shopt -s extglob
+
+# default note configuration file location
 CONF=~/.notes
 
 case $1 in
@@ -17,4 +26,6 @@ if [ ! -f ${CONF} ] ; then
 	exit 0
 fi
 
-${EDITOR}  "`head -2 ${CONF} | tail -1 ${CONF}`"
+DIR="`head -2 ${CONF} | tail -1 ${CONF}`"
+# cd "${DIR}"
+${EDITOR} ${DIR}
