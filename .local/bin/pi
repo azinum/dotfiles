@@ -1,0 +1,6 @@
+#!/bin/bash
+
+NUM=$1
+
+grep -s -o "${NUM}" pi1000000.txt | wc -l
+

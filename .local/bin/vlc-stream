@@ -1,0 +1,21 @@
+#!/bin/bash
+
+stream_file_path="/tmp/stream.asx"
+
+function run_stream() {
+	[ -f ${stream_file_path} ] && vlc ${stream_file_path}
+}
+
+[ "$#" -le 0 ] && run_stream && exit
+
+url="$1"
+
+contents="<asx version=\"3.0\">
+	<title>Stream</title>
+	<entry>
+		<ref href=\"${url}\"/>
+	</entry>
+</asx>
+"
+
+echo "${contents}" > ${stream_file_path} && run_stream
