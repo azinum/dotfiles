@@ -1,0 +1,33 @@
+#!/bin/bash
+
+FROM=wav
+TO=wav
+FLAGS=
+
+while getopts i:o:f:h option ; do
+	case "${option}"
+		in
+		i)
+			FROM="${OPTARG}" ;;
+		o)
+			TO="${OPTARG}" ;;
+		f)
+			FLAGS="${OPTARG}" ;;
+		h)
+			printf "Usage; $(basename $0) [OPTIONS]\n\n"
+			printf "OPTIONS:\n"
+			printf "%s\n" "  -i    - audio format to convert from (input)"
+			printf "%s\n" "  -o    - audio format to convert to (output)"
+			printf "%s\n" "  -f    - flags passed to ffmpeg"
+			printf "%s\n" "  -h    - show help menu"
+			exit 0 ;;
+	esac
+done
+
+echo "converting \"*.${FROM}\" => \"*.${TO}\", with flags \"${FLAGS}\"..."
+
+for i in $(find -name "*.${FROM}") ; do
+	BASENAME="$(basename ${i/.${FROM}})"
+	ffmpeg -i "${BASENAME}.${FROM}" ${FLAGS} "${BASENAME}z.${TO}"
+	mv -f "${BASENAME}z.${TO}" "${BASENAME}.${TO}"
+done
