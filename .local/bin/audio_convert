@@ -29,5 +29,7 @@ echo "converting \"*.${FROM}\" => \"*.${TO}\", with flags \"${FLAGS}\"..."
 for i in $(find -name "*.${FROM}") ; do
 	BASENAME="$(basename ${i/.${FROM}})"
 	ffmpeg -i "${BASENAME}.${FROM}" ${FLAGS} "${BASENAME}z.${TO}"
-	mv -f "${BASENAME}z.${TO}" "${BASENAME}.${TO}"
+	sox -r 36000 "${BASENAME}z.${TO}" "${BASENAME}.${TO}"
+	rm -f "${BASENAME}z.${TO}"
+	# mv -f "${BASENAME}z.${TO}" "${BASENAME}.${TO}"
 done

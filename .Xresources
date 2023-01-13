@@ -8,7 +8,7 @@
 *.borderpx: 2
 
 !! black
-*.color0:       #101010
+*.color0:       #141414
 *.color8:       #434758
 
 !! red
