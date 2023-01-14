@@ -3,4 +3,4 @@
 
 lang=$(setxkbmap -query | grep layout | awk '{ print $2 }')
 
-echo "layout: ${lang}"
+echo "💻 ${lang}"
