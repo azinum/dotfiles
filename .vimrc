@@ -10,6 +10,9 @@ syntax enable
 set nosmartindent
 set nocindent
 
+" disable autocommenting for all files
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
 autocmd BufRead,BufNewFile *.nim set filetype=nim
 autocmd BufRead,BufNewFile *.porth set filetype=porth
 autocmd BufRead,BufNewFile *.spl set filetype=spl
@@ -26,3 +29,6 @@ autocmd BufRead,BufNewFile *.py setlocal tabstop=4 shiftwidth=4 noexpandtab smar
 autocmd BufRead,BufNewFile *.cpp,*.c,*.hpp,*.h,*.si,*.funk,*.lang,*.porth,*.spl,*.nim,*.yml,*.yaml,*.lua setlocal tabstop=2 softtabstop=0 shiftwidth=2 expandtab smarttab autoindent
 
 nnoremap <F3> :set autoindent noexpandtab tabstop=4 shiftwidth=4<cr>
+
+" fix strange indentation
+set cinoptions=l1
