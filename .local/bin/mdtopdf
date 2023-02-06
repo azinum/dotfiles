@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+[ $# -le 0 ] && echo "Usage: $0 <md file>" && exit
+
+# get file without extension
+FILENAME="${1%.*}"
+
+[ -f ${FILENAME}.md ] && pandoc ${FILENAME}.md --from=gfm --pdf-engine=wkhtmltopdf --output ${FILENAME}.pdf || echo "Error: file ${FILENAME}.md does not exist"
