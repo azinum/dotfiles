@@ -5,4 +5,4 @@
 # get file without extension
 FILENAME="${1%.*}"
 
-[ -f ${FILENAME}.md ] && pandoc ${FILENAME}.md --from=gfm --pdf-engine=wkhtmltopdf --output ${FILENAME}.pdf || echo "Error: file ${FILENAME}.md does not exist"
+[ -f ${FILENAME}.md ] && pandoc ${FILENAME}.md --from=gfm --pdf-engine=xelatex --output ${FILENAME}.pdf || echo "Error: file ${FILENAME}.md does not exist"

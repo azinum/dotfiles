@@ -32,3 +32,5 @@ nnoremap <F3> :set autoindent noexpandtab tabstop=4 shiftwidth=4<cr>
 
 " fix strange indentation
 set cinoptions=l1
+
+set complete+=i
