@@ -19,3 +19,7 @@ mkdir -p ${BIN_DIR}/
 ln -f .local/bin/* ${BIN_DIR}/
 
 cp -rf .config/* ${CONFIG_DIR}/
+
+mkdir -p ${CONFIG_DIR}/lf
+cp lfrc ${CONFIG_DIR}/lf/
+cp icons ${CONFIG_DIR}/lf/

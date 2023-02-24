@@ -11,7 +11,7 @@ SAVEHIST=5000
 HISTFILE=~/.cache/zsh/history
 
 # Keybindings
-bindkey -s '^o' 'ranger\n'
+bindkey -s '^o' 'lf\n'
 
 # auto/tab complete:
 autoload -U compinit
