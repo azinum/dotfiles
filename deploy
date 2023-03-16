@@ -8,6 +8,7 @@ NVIM_SYNTAX_DIR=~/.config/nvim/after/syntax
 [ ! -f ~/.zshrc ] && ln .zshrc ~/.zshrc
 [ ! -f ~/.xprofile ] && ln .xprofile ~/.xprofile
 [ ! -f ~/.vimrc ] && ln .vimrc ~/.vimrc && ln .vimrc ~/.config/nvim/init.vim
+[ ! -f ~/.config/nvim/init.vim ] && ln .vimrc ~/.config/nvim/init.vim
 [ ! -f ~/.Xresources ] && cp -p .Xresources .Xdefaults && ln .Xresources ~/.Xresources && xrdb ~/.Xresources
 
 mkdir -p ${VIM_SYNTAX_DIR}

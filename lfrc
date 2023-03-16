@@ -17,6 +17,7 @@ cmd open &{{
     case $(file --mime-type -Lb $f) in
 		text/*) lf -remote "send $id \$$EDITOR \$fx";;
 		audio/*) lf -remote "send $id \$mpv \$f";;
+		application/pdf) lf -remote "send $id \$zathura \$f";;
 		*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}

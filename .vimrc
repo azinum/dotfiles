@@ -28,7 +28,7 @@ autocmd BufRead,BufNewFile *.py setlocal tabstop=4 shiftwidth=4 noexpandtab smar
 
 autocmd BufRead,BufNewFile *.cpp,*.c,*.hpp,*.h,*.si,*.funk,*.lang,*.porth,*.spl,*.nim,*.yml,*.yaml,*.lua setlocal tabstop=2 softtabstop=0 shiftwidth=2 expandtab smarttab autoindent
 
-autocmd BufRead,BufNewFile *.pas setlocal tabstop=4 softtabstop=0 shiftwidth=4 expandtab smarttab autoindent
+autocmd BufRead,BufNewFile *.pas,*.go,*.rs setlocal tabstop=4 softtabstop=0 shiftwidth=4 expandtab smarttab autoindent
 
 nnoremap <F3> :set autoindent noexpandtab tabstop=4 shiftwidth=4<cr>
 
