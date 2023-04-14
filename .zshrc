@@ -2,7 +2,7 @@
 
 # Set up the prompt
 autoload -U colors && colors
-PS1="%{$fg[red]%}[%{$fg[cyan]%}%n%{$fg[cyan]%}@%{$fg[cyan]%}%M %{$fg[cyan]%}%~/%{$fg[red]%}]%{$reset_color%}$ "
+PS1="%{$fg[red]%}[%{$fg[cyan]%}%~/%{$fg[red]%}]%{$reset_color%}$ "
 
 export EDITOR=nvim
 
