@@ -2,6 +2,6 @@
 
 BROWSER=firefox
 
-LINK=`cat ~/.bookmarks | grep "https:" | dmenu -i -l 26 | sed 's/.*|//g' | tr -d '\n'`
+LINK=`cat ~/.bookmarks | sort -f | grep "https:" | dmenu -i -l 26 | sed 's/.*|//g' | tr -d '\n'`
 
 [ ${LINK} ] && `${BROWSER} ${LINK}`

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+BOOKMARKS=~/.bookmarks
+
+IFS=
+
+add_bookmark() {
+	printf "%-24s | %s\n" ${TITLE} ${URL} >> ${BOOKMARKS}
+}
+
+[ $# -eq 2 ] && TITLE="$1" && URL="$2" && add_bookmark && exit 1
+
+read -r -p "bookmark title: " TITLE
+read -r -p "url: " URL
+
+add_bookmark
