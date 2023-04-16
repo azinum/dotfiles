@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+BROWSER=firefox
+
+LINK=`cat ~/.bookmarks | grep "https:" | dmenu -i -l 26 | sed 's/.*|//g' | tr -d '\n'`
+
+[ ${LINK} ] && `${BROWSER} ${LINK}`

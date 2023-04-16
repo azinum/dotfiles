@@ -22,9 +22,6 @@ xset r rate 220 50
 # Set the mouse pointer speed
 xset m 1 0
 
-# Set razer profile
-razercfg -r 0:1 2> /dev/null
-
 # In case we are using a trackpad
 # trackpad-cfg 2> /dev/null
 
@@ -37,7 +34,3 @@ dwmblocks &
 # Keybindings
 killall sxhkd 2> /dev/null
 sxhkd &
-
-# start_jack &
-
-xscreensaver &
