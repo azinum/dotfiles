@@ -10,18 +10,18 @@ super + F2
 	backlight up
 
 super + F12
-	stat-volctrl up 5; \
-	kill -35 $(pidof dwmblocks); \
-	bing bell;
+	volume-control up 5 && \
+	kill -35 $(pidof dwmblocks) && \
+	bing bell
 
 super + F11
-	stat-volctrl down 5; \
-	kill -35 $(pidof dwmblocks); \
-	bing bell;
+	volume-control down 5 && \
+	kill -35 $(pidof dwmblocks) && \
+	bing bell
 
 super + F10
-	stat-volctrl toggle; \
-	kill -35 $(pidof dwmblocks);
+	volume-control toggle && \
+	kill -35 $(pidof dwmblocks)
 
 super + F4
 	mkdir -p ~/Pictures/Screenshots; \
