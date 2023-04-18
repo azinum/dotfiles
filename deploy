@@ -7,15 +7,15 @@ NVIM_SYNTAX_DIR=~/.config/nvim/after/syntax
 
 cp .zshrc ~/.zshrc 2> /dev/null
 cp .xprofile ~/.xprofile 2> /dev/null
-cp .vimrc ~/.vimrc && cp .vimrc ~/.config/nvim/init.vim 2> /dev/null
-cp .vimrc ~/.config/nvim/init.vim
+cp .config/vim/.vimrc ~/.vimrc && cp .config/vim/.vimrc ~/.config/nvim/init.vim 2> /dev/null
+cp .config/vim/.vimrc ~/.config/nvim/init.vim
 cp .Xresources .Xdefaults && cp -f .Xresources ~/.Xresources 2> /dev/null
 xrdb ~/.Xresources
 
 mkdir -p ${VIM_SYNTAX_DIR}
 mkdir -p ${NVIM_SYNTAX_DIR}
-cp *.vim ${VIM_SYNTAX_DIR}/ 2> /dev/null
-cp *.vim ${NVIM_SYNTAX_DIR}/ 2> /dev/null
+cp .config/vim/*.vim ${VIM_SYNTAX_DIR}/ 2> /dev/null
+cp .config/vim/*.vim ${NVIM_SYNTAX_DIR}/ 2> /dev/null
 
 mkdir -p ${BIN_DIR}/
 cp .local/bin/* ${BIN_DIR}/ 2> /dev/null
@@ -23,5 +23,5 @@ cp .local/bin/* ${BIN_DIR}/ 2> /dev/null
 cp -r .config/* ${CONFIG_DIR}/
 
 mkdir -p ${CONFIG_DIR}/lf
-cp lfrc ${CONFIG_DIR}/lf/
-cp icons ${CONFIG_DIR}/lf/
+cp .config/lfrc ${CONFIG_DIR}/lf/
+cp .config/icons ${CONFIG_DIR}/lf/
