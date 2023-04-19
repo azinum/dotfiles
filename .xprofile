@@ -28,8 +28,6 @@ xset m 1 0
 # Status bar configuration
 killall dwmblocks 2> /dev/null
 dwmblocks &
-# killall dwmbar 2> /dev/null
-# dwmbar &
 
 # Keybindings
 killall sxhkd 2> /dev/null

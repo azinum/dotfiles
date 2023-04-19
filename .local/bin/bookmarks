@@ -1,7 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 BROWSER=firefox
 
-LINK=`cat ~/.bookmarks | sort -f | grep "https:" | dmenu -i -l 26 | sed 's/.*|//g' | tr -d '\n'`
+BOOKMARKS="$(cat ~/.bookmarks | sort -f)"
 
-[ ${LINK} ] && `${BROWSER} ${LINK}`
+LINK="$(echo "${BOOKMARKS}" | grep "https:" | dmenu -i -l 16)"
+
+[ "${LINK}" ] && `${BROWSER} ${LINK}` 2>/dev/null

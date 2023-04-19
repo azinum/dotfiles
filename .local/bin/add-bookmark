@@ -1,16 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 BOOKMARKS=~/.bookmarks
 
-IFS=
+URL="$(xclip -o)"
 
-add_bookmark() {
-	printf "%-24s | %s\n" ${TITLE} ${URL} >> ${BOOKMARKS}
-}
-
-[ $# -eq 2 ] && TITLE="$1" && URL="$2" && add_bookmark && exit 1
-
-read -r -p "bookmark title: " TITLE
-read -r -p "url: " URL
-
-add_bookmark
+if grep -q "^${URL}$" ${BOOKMARKS}; then
+	notify-send -t 2500 "Fail" "Bookmark already exists."
+else
+	printf "${URL}\n" >> ${BOOKMARKS}
+	notify-send -t 2500 "Success" "Bookmark added: ${URL}."
+fi
