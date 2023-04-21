@@ -38,3 +38,18 @@
 !! white
 *.color7:       #d0d0d0
 *.color15:      #ffffff
+
+dwm.dmenufont: inconsolata:pixelsize=12:antialiasing=true:autohint=true
+dwm.normbgcolor: #222222
+dwm.normbordercolor: #444444
+dwm.normfgcolor: #bbbbbb
+dwm.selbgcolor: #086aae
+dwm.selbordercolor: #157aae
+dwm.selfgcolor: #eeeeee
+dwm.borderpx: 4
+dwm.snap: 32
+dwm.showbar: 1
+dwm.topbar: 1
+dwm.nmaster: 1
+dwm.resizehints: 0
+dwm.mfact: 0.55

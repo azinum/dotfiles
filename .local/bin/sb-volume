@@ -1,12 +1,14 @@
 #!/bin/bash
 
-status="$(pactl list sinks)"
+VOLUME="$(pulsemixer --get-volume | awk '{print $1}')"
 
-vol="$(echo "$status" | grep '[0-9]\+%' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
+#status="$(pactl list sinks)"
 
-icon="🔉"
+# vol="$(echo "$status" | grep '[0-9]\+%' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
 
-[ "$vol" -gt 70 ] && icon="🔊"
-[ "$vol" -lt 30 ] && icon="🔈"
+ICON="🔉"
 
-printf "${icon} ${vol}%%"
+[ "$VOLUME" -gt 70 ] && icon="🔊"
+[ "$VOLUME" -lt 10 ] && icon="🔈"
+
+printf "${ICON} ${VOLUME}%%"
