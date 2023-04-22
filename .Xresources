@@ -3,7 +3,7 @@
 !! Transparency (0-255):
 *.alpha: 240
 
-*.font: inconsolata:pixelsize=14:antialiasing=true:autohint=true
+*.font: inconsolata:size=11:antialiasing=true:autohint=true
 
 *.borderpx: 6
 
@@ -39,14 +39,14 @@
 *.color7:       #d0d0d0
 *.color15:      #ffffff
 
-dwm.dmenufont: inconsolata:pixelsize=12:antialiasing=true:autohint=true
+dwm.dmenufont: inconsolata:size=11:antialiasing=true:autohint=true
 dwm.normbgcolor: #222222
 dwm.normbordercolor: #444444
 dwm.normfgcolor: #bbbbbb
-dwm.selbgcolor: #086aae
-dwm.selbordercolor: #157aae
+dwm.selbgcolor: #2c526f
+dwm.selbordercolor: #4f94ca
 dwm.selfgcolor: #eeeeee
-dwm.borderpx: 4
+dwm.borderpx: 3
 dwm.snap: 32
 dwm.showbar: 1
 dwm.topbar: 1
