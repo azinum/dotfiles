@@ -1,6 +1,6 @@
 # .zshrc
 
-# Set up the prompt
+# set up the prompt
 autoload -U colors && colors
 PS1="%{$fg[red]%}[%{$fg[cyan]%}%~/%{$fg[red]%}]%{$reset_color%}$ "
 
@@ -10,7 +10,7 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.cache/zsh/history
 
-# Keybindings
+# key bindings
 bindkey -s '^o' 'lf\n'
 
 # auto/tab complete:
@@ -25,3 +25,6 @@ _comp_options+=(globdots)
 [ -f ~/.Xresources ] && xrdb ~/.Xresources
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
+
+# opam configuration
+[[ ! -r ~/.opam/opam-init/init.zsh ]] || source ~/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
